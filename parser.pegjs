@@ -7,7 +7,7 @@ Goal
 Prereq
   = steps:Identifiers " needs " prereq:Identifier text:Text
   { return {
-  	"steps": steps,
+    "steps": steps,
     "needs": prereq,
     "text": text
   }}
