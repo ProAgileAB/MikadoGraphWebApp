@@ -18,7 +18,7 @@ Done
 Identifiers
   = step:Identifier steps:(", " id:Identifier { return id })*
   {
-  	steps.push(step)
+    steps.push(step)
     return steps
   }
 
