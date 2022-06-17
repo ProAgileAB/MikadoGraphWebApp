@@ -1,0 +1,21 @@
+{
+  "name": "mikadographwebapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parser.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProAgileAB/MikadoGraphWebApp.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProAgileAB/MikadoGraphWebApp/issues"
+  },
+  "homepage": "https://github.com/ProAgileAB/MikadoGraphWebApp#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
