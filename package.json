@@ -20,5 +20,8 @@
   "devDependencies": {
     "jest": "^28.1.1",
     "parcel": "^2.6.1"
+  },
+  "dependencies": {
+    "d3-graphviz": "^4.1.1"
   }
 }
