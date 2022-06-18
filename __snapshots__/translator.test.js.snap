@@ -5,3 +5,17 @@ exports[`translator can translate a single goal 1`] = `
    end [peripheries=2, shape=oval, label=\\"The goal\\", style=filled, fillcolor=lightblue];
 }"
 `;
+
+exports[`translator gives a readable error if no goal is defined 1`] = `
+"digraph G {
+   end [shape=tripleoctagon, label=\\"Need a Goal node!\\", style=filled, fillcolor=red];
+}
+"
+`;
+
+exports[`translator is an error to not have a goal 1`] = `
+"digraph G {
+   end [shape=tripleoctagon, label=\\"Need a Goal node!\\", style=filled, fillcolor=red];
+}
+"
+`;
