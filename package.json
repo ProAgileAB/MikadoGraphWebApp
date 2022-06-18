@@ -5,7 +5,8 @@
   "main": "parser.js",
   "scripts": {
     "test": "jest",
-    "parcel": "parcel"
+    "parcel": "parcel",
+    "serve": "parcel index.html"
   },
   "repository": {
     "type": "git",
