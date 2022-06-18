@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`translator can translate a single goal 1`] = `
+"digraph G {
+   end [peripheries=2, shape=oval, label=\\"The goal\\", style=filled, fillcolor=lightblue];
+}"
+`;

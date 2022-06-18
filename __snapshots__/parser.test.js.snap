@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parser can parse a needs node 1`] = `
+Array [
+  Object {
+    "needs": "AddCalls",
+    "steps": Array [
+      "Goal",
+    ],
+    "text": "Call getScore function in both places",
+  },
+]
+`;
+
+exports[`parser can parse a realistic example 1`] = `
+Array [
+  Object {
+    "goal": "Reduce duplication of switch logic",
+  },
+  Object {
+    "needs": "Calls",
+    "steps": Array [
+      "Goal",
+    ],
+    "text": "Call getpointName(int) replacing both switches",
+  },
+  Object {
+    "needs": "AddFunction",
+    "steps": Array [
+      "Calls",
+    ],
+    "text": "Add getPointName(int) function based on bottom switch",
+  },
+  Object {
+    "needs": "AddAll",
+    "steps": Array [
+      "AddFunction",
+    ],
+    "text": "Add \\"+All\\" after top switch",
+  },
+  Object {
+    "needs": "Format",
+    "steps": Array [
+      "AddAll",
+    ],
+    "text": "Format file for readability",
+  },
+  Object {
+    "needs": "DeuceReturn",
+    "steps": Array [
+      "AddAll",
+    ],
+    "text": "Return \\"Deuce if score >= before top switch",
+  },
+  Object {
+    "needs": "Gitignore",
+    "steps": Array [
+      "DeuceReturn",
+      "Format",
+    ],
+    "text": "Update .gitignore to reduce workspace clutter",
+  },
+  Object {
+    "done": "AddAll",
+  },
+  Object {
+    "done": "Format",
+  },
+]
+`;
