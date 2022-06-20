@@ -2,11 +2,11 @@
   "name": "mikadographwebapp",
   "version": "1.0.0",
   "description": "",
-  "main": "parser.js",
   "scripts": {
     "test": "jest",
     "parcel": "parcel",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./ --dist-dir docs/"
   },
   "repository": {
     "type": "git",
