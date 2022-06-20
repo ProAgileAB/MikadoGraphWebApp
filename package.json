@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "parcel": "parcel",
-    "serve": "parcel index.html"
+    "serve": "parcel spikes/d3graphviz-demo.html"
   },
   "repository": {
     "type": "git",
