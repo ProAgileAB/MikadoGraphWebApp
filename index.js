@@ -4,8 +4,8 @@ async function setText(fileHandle) {
     let fileData = await fileHandle.getFile()
     let source = await fileData.text();
     const ast = parse(source)
-    const asJSON = JSON.stringify(ast, null, 2)
-    document.getElementById("editor").innerText = asJSON
+    document.getElementById("editor").innerText =
+      JSON.stringify(ast, null, 2)
 }
 
 export async function getFile() {
