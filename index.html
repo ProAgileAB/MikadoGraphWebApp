@@ -7,6 +7,9 @@
 <body>
     <button onclick="getFile()">Open File</button>
     <pre id="editor" contenteditable="true"></pre>
-    <script type="module" src="index.js"></script>
+    <script type="module">
+        import {getFile} from './index.js'
+        window.getFile = getFile
+    </script>
 </body>
 </html>

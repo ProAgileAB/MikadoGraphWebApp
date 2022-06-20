@@ -8,7 +8,7 @@ async function setText(fileHandle) {
     document.getElementById("editor").innerText = asJSON
 }
 
-async function getFile() {
+export async function getFile() {
     try {
         let [fileHandle] = await window.showOpenFilePicker()
         await setText(fileHandle)
