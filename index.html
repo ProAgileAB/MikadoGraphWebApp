@@ -5,11 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-    <button onclick="getFile(console.log.bind(console))">Open File</button>
-    <pre id="editor" contenteditable="true"></pre>
+    <button onclick="getFile(render)">Open File</button>
     <script type="module">
         import {getFile} from './index.js'
         window.getFile = getFile
+    </script>
+    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <div id="graph" style="text-align: center;"></div>
+    <script>
+
+      const graphviz = d3
+        .select("#graph")
+        .graphviz()
+
+      function render(src) {
+        graphviz.renderDot(src);
+      }
     </script>
 </body>
 </html>

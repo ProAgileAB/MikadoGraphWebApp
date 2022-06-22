@@ -1,4 +1,5 @@
-import {parse} from "./parser.js";
+import {parse} from "./parser.js"
+import {translate} from "./translator.js"
 
 function setInnerText(resultText) {
   document.getElementById("editor").innerText = resultText
@@ -6,9 +7,9 @@ function setInnerText(resultText) {
 
 async function setText(fileHandle, callback) {
     let fileData = await fileHandle.getFile()
-    let source = await fileData.text();
+    let source = await fileData.text()
     const ast = parse(source)
-    let resultText = JSON.stringify(ast, null, 2)
+    let resultText = translate(ast)
     callback(resultText)
 }
 
