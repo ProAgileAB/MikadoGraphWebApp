@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <button onclick="getFile()">Open File</button>
+    <button onclick="getFile(console.log.bind(console))">Open File</button>
     <pre id="editor" contenteditable="true"></pre>
     <script type="module">
         import {getFile} from './index.js'

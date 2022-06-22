@@ -17,7 +17,6 @@ export async function getFile(callback) {
         let [fileHandle] = await window.showOpenFilePicker()
         setInterval(() => {
             setText(fileHandle, callback || setInnerText)
-               .then(() => console.log("updated"))
         }, 500)
     } catch (e) { }
 }

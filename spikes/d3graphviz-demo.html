@@ -11,10 +11,7 @@
     const graphviz = d3
         .select("#graph")
         .graphviz()
-        .on("initEnd", render);
-
-    function render() {
-      graphviz.renderDot(`digraph  {
+        .on("initEnd", () => render(`digraph  {
         node [style="filled"]
         a [fillcolor="#d62728"]
         b [fillcolor="#1f77b4"]
@@ -22,6 +19,9 @@
         a -> b
         a -> c
         c -> b
-    }`);
+    }`));
+
+    function render(src) {
+      graphviz.renderDot(src);
   }
 </script>
