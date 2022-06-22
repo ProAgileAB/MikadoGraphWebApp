@@ -17,29 +17,7 @@ exports[`mikado translator gives a readable error if no goal is defined 1`] = `
 exports[`mikado translator handles single prerequisite 1`] = `
 "digraph G {
    end [peripheries=2, shape=oval, label=\\"A goal\\", style=filled, fillcolor=lightblue];
-Format [label=\\"Format the file for readability\\"],Format -> end [dir=back]
-}"
-`;
-
-exports[`translator can translate a single goal 1`] = `
-"digraph G {
-   end [peripheries=2, shape=oval, label=\\"The goal\\", style=filled, fillcolor=lightblue];
-
-}"
-`;
-
-exports[`translator gives a readable error if no goal is defined 1`] = `
-"digraph G {
-   end [shape=tripleoctagon, label=\\"Need a Goal node!\\", style=filled, fillcolor=red];
-}
-"
-`;
-
-exports[`translator handles single prerequisite 1`] = `
-"digraph G {
-   end [peripheries=2, shape=oval, label=\\"A goal\\", style=filled, fillcolor=lightblue];
-
-   Format [label=\\"Format the file for readability\\"]
-   Format -> end [dir=back]
+Format [label=\\"Format the file for readability\\"]
+Format -> end [dir=back]
 }"
 `;

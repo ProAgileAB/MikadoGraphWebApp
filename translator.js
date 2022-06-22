@@ -10,7 +10,7 @@ function translate(parseResult) {
 
     let notGoal = ''
     for(let i=1; i < parseResult.length; i++) {
-        const elem = translateElement(parseResult[i])
+        const elem = translateElement(parseResult[i]).join('\n')
         notGoal = `${notGoal}${elem}`
     }
     return ""+
