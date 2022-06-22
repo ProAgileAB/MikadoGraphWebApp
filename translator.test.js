@@ -4,9 +4,9 @@
  */
 
 const { parse } = require('./parser.js')
-const { translate } = require('./translator.js')
+const { translate, translateElement } = require('./translator.js')
 
-describe("translator", () => {
+describe("mikado translator", () => {
     it("can translate a single goal", () => {
         expect(translate(parse("Goal\n  The goal\n"))).toMatchSnapshot()
     })
@@ -18,5 +18,20 @@ describe("translator", () => {
             "   A goal\n" +
             "Goal needs Format\n" +
             "   Format the file for readability\n"))).toMatchSnapshot()
+    })
+})
+
+
+describe("element translator", () => {
+    it("need element", () => {
+        const needElement = {
+            text: "the text",
+            needs: "Prereq",
+            steps: ["Goal"]
+        }
+        expect(translateElement(needElement)).toEqual([
+            `Prereq [label="the text"]`,
+            `Prereq -> end [dir=back]`
+        ])
     })
 })

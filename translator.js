@@ -10,13 +10,8 @@ function translate(parseResult) {
 
     let notGoal = ''
     for(let i=1; i < parseResult.length; i++) {
-        const label = parseResult[i].text
-        const id = parseResult[i].needs
-        const node = `   ${id} [label="${label}"]`
-        const arrow = `   ${id} -> end [dir=back]`
-        notGoal = `${notGoal}
-${node}
-${arrow}`
+        const elem = translateElement(parseResult[i])
+        notGoal = `${notGoal}${elem}`
     }
     return ""+
 `digraph G {
@@ -25,6 +20,13 @@ ${notGoal}
 }`;
 }
 
+function translateElement(element) {
+    const node = `${(element.needs)} [label="${(element.text)}"]`
+    const arrow = `${(element.needs)} -> end [dir=back]`
+    return [node, arrow]
+}
+
 module.exports = {
-    translate
+    translate,
+    translateElement
 }
