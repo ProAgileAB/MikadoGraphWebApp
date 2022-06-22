@@ -8,16 +8,12 @@
 <div id="graph" style="text-align: center;"></div>
 <script>
 
-  var graphviz = d3.select("#graph").graphviz()
-          .transition(function () {
-            return d3.transition("main")
-                    .ease(d3.easeLinear)
-                    .delay(500)
-                    .duration(1500);
-          })
-          .on("initEnd", render);
+    const graphviz = d3
+        .select("#graph")
+        .graphviz()
+        .on("initEnd", render);
 
-  function render() {
+    function render() {
       graphviz.renderDot(`digraph  {
         node [style="filled"]
         a [fillcolor="#d62728"]
