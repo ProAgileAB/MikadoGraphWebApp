@@ -12,11 +12,11 @@ async function setText(fileHandle, callback) {
     callback(resultText)
 }
 
-export async function getFile() {
+export async function getFile(callback) {
     try {
         let [fileHandle] = await window.showOpenFilePicker()
         setInterval(() => {
-            setText(fileHandle, setInnerText)
+            setText(fileHandle, callback || setInnerText)
                .then(() => console.log("updated"))
         }, 500)
     } catch (e) { }
