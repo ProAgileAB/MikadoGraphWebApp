@@ -13,4 +13,10 @@ describe("translator", () => {
     it("gives a readable error if no goal is defined", () => {
         expect(translate(parse("Done: Goal\n"))).toMatchSnapshot()
     })
+    it("handles single prerequisite", () => {
+        expect(translate(parse("Goal\n" +
+            "   A goal\n" +
+            "Goal needs Format\n" +
+            "   Format the file for readability\n"))).toMatchSnapshot()
+    })
 })

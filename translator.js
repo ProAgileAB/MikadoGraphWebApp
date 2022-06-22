@@ -8,9 +8,20 @@ function translate(parseResult) {
 `
     }
 
+    let notGoal = ''
+    for(let i=1; i < parseResult.length; i++) {
+        const label = parseResult[i].text
+        const id = parseResult[i].needs
+        const node = `   ${id} [label="${label}"]`
+        const arrow = `   ${id} -> end [dir=back]`
+        notGoal = `${notGoal}
+${node}
+${arrow}`
+    }
     return ""+
 `digraph G {
    end [peripheries=2, shape=oval, label=\"${theGoal}\", style=filled, fillcolor=lightblue];
+${notGoal}
 }`;
 }
 
