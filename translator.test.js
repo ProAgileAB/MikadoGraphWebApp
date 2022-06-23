@@ -23,7 +23,7 @@ describe("mikado translator", () => {
 
 
 describe("element translator", () => {
-    it("need element", () => {
+    it("points towards end node when Goal needs something", () => {
         const needElement = {
             text: "the text",
             needs: "Prereq",
@@ -32,6 +32,17 @@ describe("element translator", () => {
         expect(translateElement(needElement)).toEqual([
             `Prereq [label="the text"]`,
             `Prereq -> end [dir=back]`
+        ])
+    })
+    it("points towards prerequisite node when general node needs something", () => {
+        const needElement = {
+            text: "This step needs to be done first",
+            needs: "NeededPrereq",
+            steps: ["PrereqInNeed"]
+        }
+        expect(translateElement(needElement)).toEqual([
+            `NeededPrereq [label="This step needs to be done first"]`,
+            `NeededPrereq -> PrereqInNeed [dir=back]`
         ])
     })
 })
