@@ -7,6 +7,8 @@ function setInnerText(resultText) {
 
 async function setText(fileHandle, callback) {
     let fileData = await fileHandle.getFile()
+    const fileName = fileData.name
+    document.title = fileName
     let source = await fileData.text()
     const ast = parse(source)
     let resultText = translate(ast)
