@@ -10,7 +10,7 @@ function translate(parseResult) {
 
     let notGoal = ''
     for (let i = 1; i < parseResult.length; i++) {
-        const elem = translateElement(parseResult[i]).join('\n')
+        const elem = translateElement(parseResult[i]).join('\n') + '\n'
         notGoal = `${notGoal}${elem}`
     }
     return "" +
@@ -22,7 +22,7 @@ ${notGoal}
 
 function translateElement(element) {
     if (element.done) {
-        return [`${element.done} [fillcolor=green]`]
+        return [`${element.done} [style=filled, fillcolor=green]`]
     }
     const node = `${(element.needs)} [label="${(element.text)}"]`
     let from = element.steps[0] === "Goal" ? `end` : element.steps[0];

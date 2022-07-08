@@ -19,6 +19,14 @@ describe("mikado translator", () => {
             "Goal needs Format\n" +
             "   Format the file for readability\n"))).toMatchSnapshot()
     })
+    it("handles single done prerequisite", () => {
+        expect(translate(parse(`Goal
+   A goal
+Goal needs Format
+   Format the file for readability
+Done: Format
+`))).toMatchSnapshot()
+    })
 })
 
 
@@ -49,13 +57,13 @@ describe("element translator", () => {
         it("for goal", () => {
             const doneElement = { 'done': "Goal" }
             expect(translateElement(doneElement)).toEqual([
-                `Goal [fillcolor=green]`
+                `Goal [style=filled, fillcolor=green]`
             ])
         });
         it("for non goal step", () => {
             const doneElement = { 'done': "Step" }
             expect(translateElement(doneElement)).toEqual([
-                `Step [fillcolor=green]`
+                `Step [style=filled, fillcolor=green]`
             ])
         });
     });
