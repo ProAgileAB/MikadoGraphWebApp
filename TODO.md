@@ -1,5 +1,24 @@
 # TODO
 
+## Dev Environment
+
+ * [] Eslint
+ * [] src folder
+ * [] fix the broken parser.pegjs, it doesn't parse in the online editor anymore
+
+## Performance
+
+ * [] Only parse file if file has changed
+
+## UX
+
+ * [] Only work on one file at the time
+ * [] Show current file name
+ * [] Show syntax example before opening file.
+ * [] Show checkmark (or shape change) on done steps
+
+## Parser annoyances
+
 The parser requires a newline at end of .mikado file.
 
 More generally, having empty whitespace lines (for grouping, formatting) would be great.
