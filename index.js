@@ -17,7 +17,16 @@ async function setText(fileHandle, callback) {
 
 export async function getFile(callback) {
     try {
-        let [fileHandle] = await window.showOpenFilePicker()
+        let [fileHandle] = await window.showOpenFilePicker({
+            types: [
+                {
+                    description: 'Mikado file',
+                    accept: {
+                        'text/x-mikado': ['.mikado']
+                    }
+                },
+            ]
+        })
         setInterval(() => {
             setText(fileHandle, callback || setInnerText)
         }, 500)
