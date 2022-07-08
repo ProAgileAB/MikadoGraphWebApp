@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #open-button {
+            display: none;
+        }
+
+        #graph:empty ~ #open-button {
+            display: inline-block;
+        }
+
+        #example {
+            text-align: center;
+            display: none;
+        }
+
+        #graph:empty + #example {
+            display: block;
+        }
+    </style>
 </head>
-<body>
-    <button onclick="getFile(render)">Choose Mikado file (.mikado)</button>
+<body style="height: 100%">
+    <div id="graph" style="text-align: center; height: 100%"></div>
+    <button id="open-button" onclick="getFile(render)">Choose Mikado file (.mikado)</button>
     <script type="module">
         import {getFile} from './index.js'
         window.getFile = getFile
@@ -13,7 +32,25 @@
     <script src="//d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
-    <div id="graph" style="text-align: center;"></div>
+    <div id="example">
+        <h1>Example text:</h1>
+        <pre style="margin: auto; width: min-content;text-align: left">Goal
+    Reduce duplication of switch logic
+Goal needs Calls
+   Call getpointName(int) replacing both switches
+Calls needs AddFunction
+  Add getPointName(int) function based on bottom switch
+AddFunction needs AddAll
+  Add All after top switch
+AddAll needs Format
+  Format file for readability
+AddAll needs DeuceReturn
+  Return Deuce if score >= before top switch
+Format, DeuceReturn needs Gitignore
+  Update .gitignore to reduce workspace clutter
+Done: AddAll
+Done: Format</pre>
+    </div>
     <script>
 
       const graphviz = d3
