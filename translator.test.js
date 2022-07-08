@@ -45,4 +45,18 @@ describe("element translator", () => {
             `NeededPrereq -> PrereqInNeed [dir=back]`
         ])
     })
+    describe("handles done by setting green background", () => {
+        it("for goal", () => {
+            const doneElement = { 'done': "Goal" }
+            expect(translateElement(doneElement)).toEqual([
+                `Goal [fillcolor=green]`
+            ])
+        });
+        it("for non goal step", () => {
+            const doneElement = { 'done': "Step" }
+            expect(translateElement(doneElement)).toEqual([
+                `Step [fillcolor=green]`
+            ])
+        });
+    });
 })

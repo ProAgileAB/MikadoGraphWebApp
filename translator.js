@@ -21,6 +21,9 @@ ${notGoal}
 }
 
 function translateElement(element) {
+    if (element.done) {
+        return [`${element.done} [fillcolor=green]`]
+    }
     const node = `${(element.needs)} [label="${(element.text)}"]`
     let from = element.steps[0] === "Goal" ? `end` : element.steps[0];
     const arrow = `${(element.needs)} -> ${from} [dir=back]`
