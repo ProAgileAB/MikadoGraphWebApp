@@ -3,8 +3,8 @@
    to graphviz text format
  */
 
-const { parse } = require('../parser.js')
-const { translate, translateElement } = require('../translator.js')
+const { parse } = require("../parser.js")
+const { translate, translateElement } = require("../translator.js")
 
 describe("mikado translator", () => {
     it("can translate a single goal", () => {
@@ -55,13 +55,13 @@ describe("element translator", () => {
     })
     describe("handles done by setting green background", () => {
         it("for goal", () => {
-            const doneElement = { 'done': "Goal" }
+            const doneElement = { "done": "Goal" }
             expect(translateElement(doneElement)).toEqual([
                 `Goal [style=filled, fillcolor=green]`
             ])
         });
         it("for non goal step", () => {
-            const doneElement = { 'done': "Step" }
+            const doneElement = { "done": "Step" }
             expect(translateElement(doneElement)).toEqual([
                 `Step [style=filled, fillcolor=green]`
             ])
