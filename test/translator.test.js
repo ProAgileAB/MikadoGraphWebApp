@@ -3,8 +3,8 @@
    to graphviz text format
  */
 
-const { parse } = require('./parser.js')
-const { translate, translateElement } = require('./translator.js')
+const { parse } = require('../parser.js')
+const { translate, translateElement } = require('../translator.js')
 
 describe("mikado translator", () => {
     it("can translate a single goal", () => {

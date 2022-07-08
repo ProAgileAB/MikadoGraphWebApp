@@ -1,5 +1,5 @@
 
-const { parse } = require('./parser.js')
+const { parse } = require('../parser.js')
 
 describe("parser", () => {
     it("can parse a single Done", () => {
