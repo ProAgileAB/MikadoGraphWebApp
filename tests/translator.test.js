@@ -39,7 +39,7 @@ describe("element translator", () => {
         }
         expect(translateElement(needElement)).toEqual([
             `Prereq [label="the text"]`,
-            `Prereq -> end [dir=back]`
+            `Prereq -> Goal [dir=back]`
         ])
     })
     it("points towards prerequisite node when general node needs something", () => {

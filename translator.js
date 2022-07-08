@@ -3,7 +3,7 @@ function translate(parseResult) {
     if (theGoal === undefined) {
         return "" +
             `digraph G {
-   end [shape=tripleoctagon, label="Need a Goal node!", style=filled, fillcolor=red];
+   Error [shape=tripleoctagon, label="Need a Goal node!", style=filled, fillcolor=red];
 }
 `
     }
@@ -15,7 +15,7 @@ function translate(parseResult) {
     }
     return "" +
         `digraph G {
-   end [peripheries=2, shape=oval, label=\"${theGoal}\", style=filled, fillcolor=lightblue];
+   Goal [peripheries=2, shape=oval, label=\"${theGoal}\", style=filled, fillcolor=lightblue];
 ${notGoal}
 }`;
 }
@@ -25,7 +25,7 @@ function translateElement(element) {
         return [`${element.done} [style=filled, fillcolor=green]`]
     }
     const node = `${(element.needs)} [label="${(element.text)}"]`
-    let from = element.steps[0] === "Goal" ? `end` : element.steps[0];
+    let from = element.steps[0];
     const arrow = `${(element.needs)} -> ${from} [dir=back]`
     return [node, arrow]
 }
