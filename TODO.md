@@ -12,9 +12,9 @@
 
 ## UX
 
- * [ ] Only work on one file at the time
- * [ ] Show current file name
- * [ ] Show syntax example before opening file.
+ * [x] Only work on one file at the time
+ * [x] Show current file name
+ * [x] Show syntax example before opening file.
  * [ ] Show checkmark (or shape change) on done steps
 
 ## Parser annoyances
