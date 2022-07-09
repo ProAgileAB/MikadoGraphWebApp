@@ -14,7 +14,7 @@ exports[`mikado translator handles single done prerequisite 1`] = `
    Goal [peripheries=2, shape=oval, label=\\"A goal\\", style=filled, fillcolor=lightblue];
 Format [label=\\"Format the file for readability\\"]
 Format -> Goal [dir=back]
-Format [style=filled, fillcolor=green]
+Format [style=filled, fillcolor=green, shape=rectangle]
 
 }"
 `;
