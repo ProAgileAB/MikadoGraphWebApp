@@ -7,12 +7,7 @@ exports[`mikado translator can translate a single goal 1`] = `
 }"
 `;
 
-exports[`mikado translator gives a readable error if no goal is defined 1`] = `
-"digraph G {
-   Error [shape=tripleoctagon, label=\\"Need a Goal node!\\", style=filled, fillcolor=red];
-}
-"
-`;
+exports[`mikado translator gives a readable error if no goal is defined 1`] = `"Mikado graph needs exactly one Goal"`;
 
 exports[`mikado translator handles single done prerequisite 1`] = `
 "digraph G {

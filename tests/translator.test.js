@@ -11,7 +11,7 @@ describe("mikado translator", () => {
         expect(translate(parse("Goal\n  The goal\n"))).toMatchSnapshot()
     })
     it("gives a readable error if no goal is defined", () => {
-        expect(translate(parse("Done: Goal\n"))).toMatchSnapshot()
+        expect(() => translate(parse("Done: Goal\n"))).toThrowErrorMatchingSnapshot()
     })
     it("handles single prerequisite", () => {
         expect(translate(parse("Goal\n" +

@@ -1,11 +1,7 @@
 function translate(parseResult) {
     const theGoal = parseResult[0].goal
     if (theGoal === undefined) {
-        return "" +
-            `digraph G {
-   Error [shape=tripleoctagon, label="Need a Goal node!", style=filled, fillcolor=red];
-}
-`
+        throw new Error("Mikado graph needs exactly one Goal")
     }
 
     let notGoal = ''
