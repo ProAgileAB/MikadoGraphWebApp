@@ -18,8 +18,9 @@ async function setText(fileHandle, callback) {
         const ast = parse(source)
         const resultText = translate(ast)
         callback(resultText)
+        document.getElementById("error").innerText = ""
     } catch (e) {
-        alert(e.message)
+        document.getElementById("error").innerText = e.message
     }
 }
 
