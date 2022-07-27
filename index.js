@@ -14,9 +14,13 @@ async function setText(fileHandle, callback) {
     if (cacheSource === source) return
 
     cacheSource = source
-    const ast = parse(source)
-    const resultText = translate(ast)
-    callback(resultText)
+    try {
+        const ast = parse(source)
+        const resultText = translate(ast)
+        callback(resultText)
+    } catch (e) {
+        alert(e.message)
+    }
 }
 
 export async function getFile(callback) {
