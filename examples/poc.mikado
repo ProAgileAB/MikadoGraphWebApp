@@ -1,0 +1,19 @@
+Goal
+   Web app that visualizes .mikado files continuously
+Goal needs Translation
+   Translation AST to digraph
+Goal needs IntegrateSpikes
+   Integrate spikes into SPA app
+Goal needs Deploy
+   Deploy to mikado.proagile.se
+Deploy needs GithubPages
+   Deploy go github pages
+GithubPages needs ParserJsDeployIssue
+   Fix issue with deployed version not finding parser.js
+GithubPages needs DocsFolder
+   Commit build to docs folder
+Done: DocsFolder
+Done: ParserJsDeployIssue
+Done: GithubPages
+Done: IntegrateSpikes
+Done: Translation

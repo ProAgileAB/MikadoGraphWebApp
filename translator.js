@@ -18,7 +18,7 @@ ${notGoal}
 
 function translateElement(element) {
     if (element.done) {
-        return [`${element.done} [style=filled, fillcolor=green]`]
+        return [`${element.done} [style=filled, fillcolor="#44ff44"]`]
     }
     const node = `${(element.needs)} [label="${(element.text)}"]`
     let from = element.steps[0];
