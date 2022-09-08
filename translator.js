@@ -20,7 +20,8 @@ function translateElement(element) {
     if (element.done) {
         return [`${element.done} [style=filled, fillcolor="#44ff44"]`]
     }
-    const node = `${(element.needs)} [label="${(element.text)}"]`
+    let labelText = element.text.split(" ").join("\n")
+    const node = `${(element.needs)} [label="${labelText}"]`
     let from = element.steps[0];
     const arrow = `${(element.needs)} -> ${from} [dir=back]`
     return [node, arrow]

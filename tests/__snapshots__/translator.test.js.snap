@@ -22,7 +22,11 @@ Format [style=filled, fillcolor=\\"#44ff44\\"]
 exports[`mikado translator handles single prerequisite 1`] = `
 "digraph G {
    Goal [peripheries=2, shape=oval, label=\\"A goal\\", style=filled, fillcolor=lightblue];
-Format [label=\\"Format the file for readability\\"]
+Format [label=\\"Format
+the
+file
+for
+readability\\"]
 Format -> Goal [dir=back]
 
 }"

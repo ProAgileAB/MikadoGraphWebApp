@@ -38,7 +38,7 @@ describe("element translator", () => {
             steps: ["Goal"]
         }
         expect(translateElement(needElement)).toEqual([
-            `Prereq [label="the text"]`,
+            `Prereq [label="the\ntext"]`,
             `Prereq -> Goal [dir=back]`
         ])
     })
@@ -49,7 +49,7 @@ describe("element translator", () => {
             steps: ["PrereqInNeed"]
         }
         expect(translateElement(needElement)).toEqual([
-            `NeededPrereq [label="This step needs to be done first"]`,
+            `NeededPrereq [label="This\nstep\nneeds\nto\nbe\ndone\nfirst"]`,
             `NeededPrereq -> PrereqInNeed [dir=back]`
         ])
     })
