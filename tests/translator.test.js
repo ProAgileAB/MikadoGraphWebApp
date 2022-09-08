@@ -57,13 +57,13 @@ describe("element translator", () => {
         it("for goal", () => {
             const doneElement = { "done": "Goal" }
             expect(translateElement(doneElement)).toEqual([
-                `Goal [style=filled, fillcolor=green, shape=rectangle]`
+                `Goal [style=filled, fillcolor="#44ff44"]`
             ])
         });
         it("for non goal step", () => {
             const doneElement = { "done": "Step" }
             expect(translateElement(doneElement)).toEqual([
-                `Step [style=filled, fillcolor=green, shape=rectangle]`
+                `Step [style=filled, fillcolor="#44ff44"]`
             ])
         });
     });
